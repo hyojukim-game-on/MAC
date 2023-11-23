@@ -1,29 +1,57 @@
-# vue-project
+# final-pjt-front
 
-This template should help get you started developing with Vue 3 in Vite.
+- 팀원 정보 및 업무 분담 내역
 
-## Recommended IDE Setup
+- 목표 서비스 구현 및 실제 구현 정도
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- 데이터베이스 모델링 (ERD)
 
-## Customize configuration
+- 영화 추천 알고리즘에 대한 기술적 설명
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- 서비스 대표 기능에 대한 설명
 
-## Project Setup
+- 느낀점, 후기 등
 
-```sh
-npm install
-```
+- ![](C:\Users\SSAFY\AppData\Roaming\marktext\images\2023-11-16-16-56-28-image.png)
 
-### Compile and Hot-Reload for Development
+## 작업노트
 
-```sh
-npm run dev
-```
+- 23.11.20 (월)
 
-### Compile and Minify for Production
+- 김효주
 
-```sh
-npm run build
-```
+- ================오늘의 목표================
+  
+  - 인증 관련 페이지들 구현하기
+  
+  ================DONE LIST=================
+  
+  - 오전 : 회원가입 페이지 구현 완료, 로그인 페이지 구현 완료
+  
+  ================PROGRESS================
+  
+  - 오후 (13:37~)
+  - 로그아웃 
+  - 회원탈퇴
+  
+  ================TODO LIST================
+  구현
+  
+  - 회원가입 페이지, 로그인 페이지에
+    - 입력된 데이터의 유효성 검사 진행하기
+    
+    - 예시: 이메일 형식, 비밀번호 강도
+  - 로그인 안 했을 때 어디까지 페이지 보여줄 건지 결정하기
+    - HomeView 에서 이미지만 바꾸고 로그인하고 추천 영화 더보기를 
+    
+    - 아래쪽에 링크 형태로 띄워주기
+  - 회원탈퇴
+  - 로그아웃
+  - 회원탈퇴, 로그아웃 후 redirect 어디로 할 건지 결정해야됨
+    - 랜딩 페이지로 가기
+  - 프로필 회원정보 수정
+    - 프로필 기본 이미지, ID 보여주기
+  
+  논의
+  
+  - tbd
