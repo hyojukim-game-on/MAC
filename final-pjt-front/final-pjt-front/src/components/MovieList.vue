@@ -22,7 +22,7 @@
 </template>
 
 <script setup>
-    import MovieListItem from '@/components/MovieListItem.vue'
+
     import { useAppStore } from '@/store/app'
 
     const store = useAppStore()

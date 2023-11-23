@@ -68,7 +68,11 @@ REST_FRAMEWORK = {
     # 권한
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.AllowAny',
-    )
+    ),
+    # pagination
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10,  # 페이지당 반환할 항목 수 (여기서는 10개로 설정)
+
 }
 
 

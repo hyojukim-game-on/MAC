@@ -26,6 +26,8 @@ export const useAppStore = defineStore('app', () => {
       }
     })
     const isLikedObj = ref({})
+    const drawer = false
+    const searchData = ref('')
 
     // 영화 가져오기
     const getMovies = function () {
@@ -217,6 +219,6 @@ export const useAppStore = defineStore('app', () => {
     }
     return { movies, getMovies, articles, 
       getArticles, BASE_URL, signUp, logIn, token, 
-      logOut, createArticle, updateArticle, isLogin, like, isLikedObj}
+      logOut, createArticle, updateArticle, isLogin, like, isLikedObj, drawer, searchData}
     
 }, {persist: true})

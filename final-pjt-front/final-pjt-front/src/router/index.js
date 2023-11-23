@@ -7,11 +7,11 @@ import ArticleView from '@/views/ArticleView.vue'
 import ArticleCreateView from '@/views/ArticleCreateView.vue'
 import ArticleUpdateView from '@/views/ArticleUpdateView.vue'
 import ArticleDetailView from '@/views/ArticleDetailView.vue'
-import ProfileView from '@/views/ProfileView.vue'
+// import ProfileView from '@/views/ProfileView.vue'
 import MovieView from '@/views/MovieView.vue'
 import MovieDetailView from '@/views/MovieDetailView.vue'
-
-
+import MovieSearchView from '@/views/MovieSearchView.vue'
+import MovieSearchResultView from '@/views/MovieSearchResultView.vue'
 
 
 const router = createRouter({
@@ -52,11 +52,11 @@ const router = createRouter({
       name: 'ArticleUpdateView',
       component: ArticleUpdateView
     }, 
-    {
-      path: '/profile/:id/',
-      name: 'ProfileView',
-      component: ProfileView
-    }, 
+    // {
+    //   path: '/profile/:id/',
+    //   name: 'ProfileView',
+    //   component: ProfileView
+    // }, 
     {
       path: '/movies',
       name: 'MovieView',
@@ -66,7 +66,17 @@ const router = createRouter({
       path: '/movies/:id/',
       name: 'MovieDetailView',
       component: MovieDetailView
+    },
+    {
+      path: '/movies/search/',
+      name: 'MovieSearchView',
+      component: MovieSearchView
     }, 
+    {
+      path: '/movies/search/results/',
+      name: 'MovieSearchResultView',
+      component: MovieSearchResultView
+    },
   ]
 })
 
