@@ -14,6 +14,7 @@ from bs4 import BeautifulSoup as bs
 from django.db.models import Q, F, Case, When, Value, IntegerField
 from django.utils import timezone
 from rest_framework.pagination import PageNumberPagination
+import datetime
 
 
 
@@ -27,26 +28,36 @@ ACCESS_TOKEN = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhNTQwMWI1M2ExNjgwN2E3NjVkZjUxMTM
 
 @api_view(['GET'])
 def movie_list(request):
-    for n in range(1,1+50):
+    for n in range(1, 250+1):
         url = f'https://api.themoviedb.org/3/movie/popular?api_key={API_KEY}&page={n}'
         response = requests.get(url)
         movies_data = response.json()['results']
 
         for movie_data in movies_data:
-            # 영화 정보 저장
-            movie = Movie.objects.get_or_create(
+            # Parse and format the release_date
+            release_date_str = movie_data['release_date']
+            try:
+                release_date = datetime.datetime.strptime(release_date_str, '%Y-%m-%d').date()
+            except ValueError:
+                # Handle invalid date format or missing date
+                release_date = None
+
+            # Save the movie data
+            movie, created = Movie.objects.get_or_create(
                 title=movie_data['title'],
                 defaults={
-                    'genre_ids' : movie_data['genre_ids'],
+                    'genre_ids': movie_data['genre_ids'],
                     'id': movie_data['id'],
-                    'release_date': movie_data['release_date'],
+                    'release_date': release_date,
                     'overview': movie_data['overview'],
                     'poster_path': movie_data['poster_path'],
-                    'adult': movie_data['adult']
+                    'adult': movie_data['adult'],
+                    'popularity': movie_data['popularity'],
                 }
             )
-        # JSON 응답
-        movies = Movie.objects.all().values()
+
+    # JSON response
+    movies = Movie.objects.all().values()
     return JsonResponse({'movies': list(movies)})
 
 
@@ -103,37 +114,28 @@ def movie_search(request, search_id):
     }
 
     if search_id in search_conditions:
-        
+        movies = Movie.objects.all()
         genres = search_conditions[search_id]['genres']
-        current_date = timezone.now().date()  # 현재 날짜 가져오기
-        # 2000년 이후에서 현재 날짜까지의 영화
-        movies = Movie.objects.filter(release_date__gte='2000-01-01', release_date__lte=current_date)
         
         q_objects = Q()
         for genre in genres:
             q_objects |= Q(genre_ids__contains=genre)
 
         movies = movies.filter(q_objects)
-        movies = movies.order_by('-release_date') # 최신 영화가 먼저 나오게 정렬
+        movies = movies.order_by('-popularity') # 인기있는 영화가 먼저 나오게 정렬
 
-        # 미래에 개봉하는 영화들 따로 분리
-        future_movies = Movie.objects.filter(release_date__gt=current_date)
-
-
-        # movies 를 pagination 을 적용하여 10개까지만 반환
+        # movies 를 pagination 을 적용하여 50개까지만 반환
         paginator = PageNumberPagination()
-        paginator.page_size = 10
+        paginator.page_size = 50
         result_page = paginator.paginate_queryset(movies, request)
 
 
         # JSON으로 변환해서 반환
         serializer = MovieSerializer(result_page, many=True)
-        future_movies_serializer = MovieSerializer(future_movies, many=True)
         
         # data 로 묶어서 제공
         data = {
             'current_movies': serializer.data,
-            'future_movies': future_movies_serializer.data
             }
         
         return paginator.get_paginated_response(data)
