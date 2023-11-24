@@ -1,19 +1,178 @@
 <template>
     <div>
-        <div class="text-h1 text-center text-no-wrap">
-            Movies in Any Case
-        </div>
-        <RouterLink :to="{name: 'MovieView'}">영화 리스트</RouterLink>
+        <v-row>
+            <v-col
+            cols="3"
+            >
+            <v-img
+                src="https://parade.com/.image/t_share/MTkwNTgxMjk2NzkwMTE5NTQ5/rosemarys-baby.jpg"
+                aspect-ratio="1"
+                cover
+                class="bg-grey-lighten-2"
+            >
+            </v-img>
+            </v-col>
+            <v-col
+            cols="3">
+            <v-img
+                src="https://parade.com/.image/t_share/MTkwNTgxMjk2NzkzNTkyOTU3/the-exorcist.jpg"
+                aspect-ratio="1"
+                cover
+                class="bg-grey-lighten-2"
+            >
+            </v-img>
+            </v-col>
+            <v-col
+            cols="3">
+            <v-img
+                src="https://m.media-amazon.com/images/I/61n-olilSdL._AC_SL1000_.jpg"
+                aspect-ratio="1"
+                cover
+                class="bg-grey-lighten-2"
+            >
+            </v-img>
+            </v-col>
+            <v-col
+            cols="3"
+            >
+            <v-img
+                src="https://m.media-amazon.com/images/I/51PXMYL1TML._AC_UF894,1000_QL80_.jpg"
+                aspect-ratio="1"
+                cover
+                class="bg-grey-lighten-2"
+            >
+            </v-img>
+            </v-col>
+            <v-col
+            cols="3">
+            <v-img
+                src="https://artofthemovies.co.uk/cdn/shop/products/isle-of-dogs_advance_a_ds_os-439579.jpg?v=1670354359"
+                aspect-ratio="1"
+                cover
+                class="bg-grey-lighten-2"
+            >
+            </v-img>
+            </v-col>
+            <v-col
+            cols="3">
+            <v-img
+                src="https://www.originalfilmart.com/cdn/shop/files/Life_aquatic_steve_sizzou_2004_original_film_art_7893fcda-54a4-4b81-b284-20eb6484ed5d_5000x.jpg?v=1699036606"
+                aspect-ratio="1"
+                cover
+                class="bg-grey-lighten-2"
+            >
+            </v-img>
+            </v-col>
+            <v-col
+            cols="3"
+            >
+            <v-img
+                src="https://www.tallengestore.com/cdn/shop/products/TheRoyalTenenbaums-OwenWilson-WesAnderson-HollywoodMovieArtPoster_3d2a1828-31d8-4eea-926c-7ba5a2c83a9f.jpg?v=1602666342"
+                aspect-ratio="1"
+                cover
+                class="bg-grey-lighten-2"
+            >
+            </v-img>
+            </v-col>
+            <v-col
+            cols="3">
+            <v-img
+                src="https://m.media-amazon.com/images/I/51OM85JsXxL._AC_UF894,1000_QL80_.jpg"
+                aspect-ratio="1"
+                cover
+                class="bg-grey-lighten-2"
+            >
+            </v-img>
+            </v-col>
+            <v-col
+            cols="3">
+            <v-img
+                src="https://i.ebayimg.com/images/g/iAUAAOSwR29ZJgpK/s-l1200.jpg"
+                aspect-ratio="1"
+                cover
+                class="bg-grey-lighten-2"
+            >
+            </v-img>
+            </v-col>
+            <v-col
+            cols="3"
+            >
+            <v-img
+                src="https://m.media-amazon.com/images/M/MV5BNDg4NjM1YjMtYmNhZC00MjM0LWFiZmYtNGY1YjA3MzZmODc5XkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_.jpg"
+                aspect-ratio="1"
+                cover
+                class="bg-grey-lighten-2"
+            >
+            </v-img>
+            </v-col>
+            <v-col
+            cols="3">
+            <v-img
+                src="https://m.media-amazon.com/images/I/61fExTEY7dL.jpg"
+                aspect-ratio="1"
+                cover
+                class="bg-grey-lighten-2"
+            >
+            </v-img>
+            </v-col>
+            <v-col
+            cols="3">
+            <v-img
+                src="https://artofthemovies.co.uk/cdn/shop/products/et_the_extra_terrestrial_R02_teaser_NG06082_B_235b0492-f7cc-4cdf-8c58-474a8c271755-604500.jpg?v=1611687902"
+                aspect-ratio="1"
+                cover
+                class="bg-grey-lighten-2"
+            >
+            </v-img>
+            </v-col>
+            <v-col
+            cols="3"
+            >
+            <v-img
+                src="https://m.media-amazon.com/images/I/71cMRLDoNXL._AC_UF894,1000_QL80_.jpg"
+                aspect-ratio="1"
+                cover
+                class="bg-grey-lighten-2"
+            >
+            </v-img>
+            </v-col>
+            <v-col
+            cols="3">
+            <v-img
+                src="https://i.etsystatic.com/16952472/r/il/6fccec/1570785513/il_1080xN.1570785513_hxlg.jpg"
+                aspect-ratio="1"
+                cover
+                class="bg-grey-lighten-2"
+            >
+            </v-img>
+            </v-col>
+            <v-col
+            cols="3">
+            <v-img
+                src="https://www.komar.de/media/catalog/product/cache/5/image/9df78eab33525d08d6e5fb8d27136e95/v/d/vd-046-star-wars-official-poster-ep7.jpg"
+                aspect-ratio="1"
+                cover
+                class="bg-grey-lighten-2"
+            >
+            </v-img>
+            </v-col>
+            <v-col
+            cols="3">
+            <v-img
+                src="https://m.media-amazon.com/images/I/71nWfxOlCTL.jpg"
+                aspect-ratio="1"
+                cover
+                class="bg-grey-lighten-2"
+            >
+            </v-img>
+            </v-col>
+        </v-row>
     </div>
 </template>            
 
 <script setup>
 
-import { onMounted } from 'vue'
-import { useAppStore } from '@/store/app'
-import { RouterLink } from 'vue-router'
 
-const store = useAppStore()
 
 </script>
 

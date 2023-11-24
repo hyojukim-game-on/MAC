@@ -1,5 +1,5 @@
 <template>
-    <div class="py-3 my-2">
+    <div class="py-3 my-2 article-container">
         <v-divider></v-divider>
         <ArticleListItem
         v-for="article in store.articles"
@@ -20,5 +20,10 @@
 </script>
 
 <style scoped>
-
+.article-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 </style>

@@ -9,7 +9,8 @@
                     v-for="(value, key) in searchConditionObj"
                     :key="key"
                     @click="search(key)"
-                    :color="getColor(key)">{{ value }}</v-chip>
+                    :color="getColor(key)"
+                    class="px-10 mx-3 my-2">{{ value }}</v-chip>
             </v-card>
         </v-container>
     </div>
@@ -26,24 +27,24 @@ import { storeToRefs } from 'pinia';
 
 
 const searchConditionObj = {
-    '1': '혼자/긍정적',
-    '2': '혼자/부정적',
-    '3': '연인과/긍정적',
-    '4': '연인과/부정적',
-    '5': '친구와/긍정적',
-    '6': '친구와/부정적',
-    '7': '부모자식/긍정적',
-    '8': '부모자식/부정적',
-    '9': '형제자매/긍정적',
-    '10': '형제자매/부정적',
-    '11': '3명이상/친구들/긍정적',
-    '12': '3명이상/친구들/부정적',
-    '13': '3명이상/지인들/긍정적',
-    '14': '3명이상/지인들/부정적',
-    '15': '3명이상/회사동료/긍정적',
-    '16': '3명이상/회사동료/부정적',
-    '17': '3명이상/가족들/긍정적',
-    '18': '3명이상/가족들/부정적'
+    '1': '혼자 영화에 몰입할 떄😎',
+    '2': '혼자 영화로 시간 때울 때🤔',
+    '3': '연인과 즐거운 시간을 보낼 때😈',
+    '4': '연인과 싸웠지만 데이트는 하고 싶을 때💨',
+    '5': '동네 친구와 만나서 영화 볼 때🙆‍♀️',
+    '6': '친해진 지 얼마 안 된 사이와 영화 볼 때💁‍♀️',
+    '7': '부모님과 영화 데이트🙌',
+    '8': '어버이날 픽💜',
+    '9': '호적메이트와의 영화 탐방💌',
+    '10': '영화 보고 싶은데 같이 볼 사람이 호적메이트밖에 없을 때💫',
+    '11': '찐친과 영화볼 때🧡',
+    '12': '동창회에서 영화본다면✅',
+    '13': '영화 모임을 처음 갈 때💛',
+    '14': '처음 만난 사람들과 할 말 없을 때💗',
+    '15': '회사 친구와 밖에서 만난다면🚲',
+    '16': '부장님과 영화를 봐야만 한다면🚩',
+    '17': '패밀리데이트👍',
+    '18': '명절에 가족들과🌛'
 }
 
 const store = useAppStore()
@@ -73,24 +74,40 @@ const getColor = function (key) {
     // 예: 가족 관련은 명도 3번, 긍정적은 primary 색상 등
         switch (key) {
         case '1': // 혼자/긍정적
-        case '3': // 연인과/긍정적
-        case '5': // 친구와/긍정적
-        case '7': // 부모자식/긍정적
-        case '9': // 형제자매/긍정적
-        case '11': // 3명이상/친구들/긍정적
-        case '13': // 3명이상/지인들/긍정적
-        case '15': // 3명이상/회사동료/긍정적
+            return 'deep-purple'
+        case '3': 
+            return 'green'
+        case '5':
+            return 'blue'
+        case '7': 
+            return 'red'
+        case '9': 
+            return 'pink'
+        case '11': 
+            return 'teal'
+        case '13': 
+            return 'cyan'
+        case '15': 
+            return 'purple'
         case '17': // 3명이상/가족들/긍정적
-            return 'blue-accent-2';
+            return 'indigo';
 
-        case '2': // 혼자/부정적
-        case '4': // 연인과/부정적
-        case '6': // 친구와/부정적
-        case '8': // 부모자식/부정적
-        case '10': // 형제자매/부정적
-        case '12': // 3명이상/친구들/부정적
-        case '14': // 3명이상/지인들/부정적
-        case '16': // 3명이상/회사동료/부정적
+        case '2': 
+            return 'green-lighten-1'// 혼자/부정적
+        case '4': 
+            return 'light-green-accent-4' // 연인과/부정적
+        case '6': 
+            return 'light-green-darken-4'// 친구와/부정적
+        case '8':
+            return 'yellow-darken-4' // 부모자식/부정적
+        case '10': 
+            return 'amber' // 형제자매/부정적
+        case '12': 
+            return 'deep-orange-darken-1'// 3명이상/친구들/부정적
+        case '14': 
+            return 'brown-darken-4' // 3명이상/지인들/부정적
+        case '16': 
+            return 'blue-grey-darken-4'// 3명이상/회사동료/부정적
         case '18': // 3명이상/가족들/부정적
             return 'green-accent-4';
 

@@ -1,6 +1,6 @@
 <template>
     <v-container class="py-8">
-    <v-app-bar app color="deep-purple" dark>
+    <v-app-bar app color="deep-purple-lighten-1" dark>
         <v-app-bar-nav-icon @click="store.drawer = !store.drawer"> 
             <v-btn icon>
                 <v-icon icon="mdi:mdi-menu"></v-icon>
@@ -10,7 +10,7 @@
         <v-spacer></v-spacer>
         <RouterLink :to="{ name: 'MovieSearchView'}">
             <v-btn icon>
-                <v-icon icon="mdi mdi-movie-search-outline"></v-icon>
+                <v-icon icon="mdi mdi-magnify"></v-icon>
             </v-btn>
         </RouterLink>
     </v-app-bar>
